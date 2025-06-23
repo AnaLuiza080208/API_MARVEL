@@ -4,7 +4,6 @@ const ts = new Date().getTime();
 const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString(CryptoJS.enc.Hex);
 const baseURL = 'https://gateway.marvel.com/v1/public';
 
-// Função genérica para buscar dados
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`${baseURL}/${endpoint}?ts=${ts}&apikey=${publicKey}&hash=${hash}&limit=5`);
@@ -17,7 +16,6 @@ async function fetchData(endpoint) {
   }
 }
 
-// Função para exibir conteúdo
 function displayContent(items, containerId, title) {
   const container = document.getElementById(containerId);
   container.innerHTML = '';
@@ -45,7 +43,6 @@ function displayContent(items, containerId, title) {
   });
 }
 
-// Carregar todos os dados
 async function loadAllData() {
   try {
     const [events, comics] = await Promise.all([
@@ -60,5 +57,4 @@ async function loadAllData() {
   }
 }
 
-// Iniciar quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', loadAllData);
