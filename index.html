@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marvel API</title>
+  <title>Marvel API - Eventos e Comics</title>
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Marvel API - Eventos</h1>
-  <div id="characters"></div>
-
+  <div class="header">
+    <h1>Marvel API - Eventos e Comics</h1>
+  </div>
+  <div class="container">
+    <section class="section">
+      <h2>Eventos</h2>
+      <div id="events" class="content-grid"></div>
+    </section>
+    
+    <section class="section">
+      <h2>Comics</h2>
+      <div id="comics" class="content-grid"></div>
+    </section>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
